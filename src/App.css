@@ -2,6 +2,7 @@
 main {
   color: #000749;
   font-size: calc(10px + 2vmin);
+  font-weight: 700;
   max-height: 100vh;
   text-align: center;
 }
@@ -11,8 +12,11 @@ h2 {
   margin: 0;
 }
 
+h1 {
+  font-size: 5rem;
+}
+
 p {
-  font-weight: 600;
   margin-top: 1rem;
 }
 
@@ -29,11 +33,60 @@ p {
   width: 50vmin;
 }
 
-.search-icon {
+.icon {
   background-color: #94d2bd;
+  border-radius: 1rem;
   display: block;
   height: 3rem;
   width: 3rem;
 }
 
-/* Hero */
+/* Illustrations */
+.illustrations {
+  background-color: #94d2bd;
+  border-radius: 10rem;
+  height: 25rem;
+  margin: 6rem auto 0;
+  width: 25rem;
+}
+
+/* Details */
+.temperature--details,
+.info--details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.temperature--details {
+  margin: 6rem 5rem 0;
+}
+
+.temperature__average {
+  font-size: 4.8rem;
+}
+
+.temperature__minmax {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 1.2rem 0.5rem 0;
+}
+
+.temperature__minmax:last-of-type {
+  opacity: 20%;
+}
+
+.info--details {
+  margin: 5rem 5rem 0;
+}
+
+.info--icon {
+  background-color: #000749;
+  margin: auto;
+  opacity: 30%;
+}
+
+.info__text {
+  display: block;
+  font-size: 1.6rem;
+  margin-top: 2.4rem;
+}
