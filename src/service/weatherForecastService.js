@@ -1,5 +1,8 @@
 import http from "./httpService";
 
-export async function getWeatherForecast() {
-  return await http.get("");
+const apiEndpoint = (city) =>
+  `/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`;
+
+export async function getWeatherForecast(city) {
+  return await http.get(apiEndpoint(city));
 }
