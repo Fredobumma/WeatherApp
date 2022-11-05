@@ -4,14 +4,13 @@ import NavBar from "./component/navbar";
 import Heading from "./component/heading";
 import Illustrations from "./component/illustrations";
 import ForecastDetails from "./component/forecastDetails";
-import http from "./service/httpService";
+// import { getWeatherForecast } from "./service/weatherForecastService";
 import "./App.css";
 
 function App() {
   return (
     <React.Fragment>
       <main>
-        {console.log(http.get())}
         <NavBar logo={logo} />
         <Heading />
         <Illustrations />
