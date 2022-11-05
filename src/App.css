@@ -1,22 +1,22 @@
+@import url(https://allfont.net/allfont.css?fonts=franklin-gothic-medium);
+
 /* Basic Styles */
 main {
   color: #000749;
   font-size: calc(10px + 2vmin);
-  font-weight: 700;
+  font-weight: 600;
   max-height: 100vh;
   text-align: center;
 }
 
-h1,
-h2 {
+h1 {
+  font-size: 3.2rem;
+  letter-spacing: 0.1rem;
   margin: 0;
 }
 
-h1 {
-  font-size: 5rem;
-}
-
 p {
+  font-size: 1.6rem;
   margin-top: 1rem;
 }
 
@@ -34,20 +34,49 @@ p {
 }
 
 .icon {
-  background-color: #94d2bd;
-  border-radius: 1rem;
-  display: block;
-  height: 3rem;
-  width: 3rem;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.icon-search {
+  background-image: url("images/magnifying-glass-solid.svg");
 }
 
 /* Illustrations */
 .illustrations {
-  background-color: #94d2bd;
-  border-radius: 10rem;
-  height: 25rem;
+  background-image: url("images/sky.svg");
+  height: 26.2rem;
   margin: 6rem auto 0;
-  width: 25rem;
+  position: relative;
+  width: 25.8rem;
+}
+
+.illustrations__cloud {
+  background-image: url("images/cloudy.svg");
+  height: 11.6rem;
+  position: absolute;
+  right: 12.2rem;
+  top: 5rem;
+  width: 14.8rem;
+  z-index: 2;
+}
+
+.illustrations__cloud_2 {
+  background-image: url("images/cloudy-2.svg");
+  bottom: 13.5rem;
+  height: 12.9rem;
+  left: 10.8rem;
+  position: absolute;
+  width: 16.2rem;
+}
+
+.illustrations__sun {
+  background-image: url("images/cloudySun.svg");
+  height: 14.4rem;
+  left: 5.5rem;
+  position: absolute;
+  top: 5rem;
+  width: 14.4rem;
 }
 
 /* Details */
@@ -58,17 +87,19 @@ p {
 }
 
 .temperature--details {
-  margin: 6rem 5rem 0;
+  margin: 7rem 5rem 0;
 }
 
 .temperature__average {
   font-size: 4.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
 }
 
 .temperature__minmax {
   display: inline-block;
   font-size: 1.5rem;
-  padding: 1.2rem 0.5rem 0;
+  padding: 1rem 0.5rem 0;
 }
 
 .temperature__minmax:last-of-type {
@@ -76,17 +107,29 @@ p {
 }
 
 .info--details {
-  margin: 5rem 5rem 0;
+  margin: 6.5rem 5rem 0;
 }
 
 .info--icon {
-  background-color: #000749;
+  background-repeat: no-repeat;
   margin: auto;
-  opacity: 30%;
+}
+
+.pressure {
+  background-image: url("images/pressure.svg");
+}
+
+.humidity {
+  background-image: url("images/humidity.svg");
+  height: 3.4rem;
+  margin-top: -1rem;
+}
+
+.rain {
+  background-image: url("images/rain.svg");
 }
 
 .info__text {
-  display: block;
   font-size: 1.6rem;
-  margin-top: 2.4rem;
+  margin-top: 2rem;
 }

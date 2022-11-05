@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import logo from "./images/logo.svg";
 import "./App.css";
 
 function App() {
@@ -8,13 +8,17 @@ function App() {
       <main>
         <nav className="navbar">
           <img src={logo} className="app-logo" alt="logo" />
-          <span className="icon"></span>
+          <span className="icon icon-search"></span>
         </nav>
         <header>
-          <h2>London</h2>
+          <h1>London</h1>
           <p>Cloudy</p>
         </header>
-        <section className="illustrations"></section>
+        <section className="illustrations">
+          <div className="illustrations__cloud"></div>
+          <div className="illustrations__sun"></div>
+          <div className="illustrations__cloud_2"></div>
+        </section>
         <section>
           <div class="temperature--details">
             <div className="temperature__average">51*</div>
@@ -25,16 +29,16 @@ function App() {
           </div>
           <div className="info--details">
             <div>
-              <span className="icon info--icon"></span>
-              <span className="info__text">106km/h</span>
+              <div className="icon info--icon pressure"></div>
+              <div className="info__text">106km/h</div>
             </div>
             <div>
-              <span className="icon info--icon"></span>
-              <span className="info__text">22%</span>
+              <div className="icon info--icon humidity"></div>
+              <div className="info__text">22%</div>
             </div>
             <div>
-              <span className="icon info--icon"></span>
-              <span className="info__text">11%</span>
+              <div className="icon info--icon rain"></div>
+              <div className="info__text">11%</div>
             </div>
           </div>
         </section>
