@@ -133,14 +133,10 @@ p {
 }
 
 /* Details */
-.temperature--details,
-.extra-info--details {
-  display: flex;
-  justify-content: space-between;
-}
-
 .temperature--details {
-  margin: 7rem 5rem 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 7rem auto 0;
 }
 
 .temperature__average {
@@ -160,7 +156,11 @@ p {
 }
 
 .extra-info--details {
-  margin: 6.5rem 5rem 5rem;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 6.5rem auto 5rem;
+  width: 85%;
 }
 
 .extra-info--icon {
@@ -185,4 +185,8 @@ p {
 .extra-info__text {
   font-size: 1.6rem;
   margin-top: 2rem;
+}
+
+.pressure + .extra-info__text {
+  margin-top: 1.7rem;
 }

@@ -23,6 +23,7 @@ const Search = ({
               value={searchQuery}
               {...rest}
             />
+            {console.log(rest)}
             <span className="icon enter-search" onClick={onSearch}></span>
           </div>
         </div>

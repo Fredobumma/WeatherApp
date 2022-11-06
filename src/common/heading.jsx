@@ -1,10 +1,10 @@
 import React from "react";
 
-const Heading = () => {
+const Heading = ({ city, weather }) => {
   return (
     <header>
-      <h1>London</h1>
-      <p>Cloudy</p>
+      <h1>{city}</h1>
+      <p>{weather}</p>
     </header>
   );
 };

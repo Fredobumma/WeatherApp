@@ -93,9 +93,19 @@ function App() {
           onSearch={handleSearch}
           onKeyDown={handleKeyDown}
         />
-        <Heading />
+        <Heading
+          city={appState.forecast.city}
+          weather={appState.forecast.weather}
+        />
         <Illustrations />
-        <ForecastDetails />
+        <ForecastDetails
+          averageTemp={appState.forecast.averageTemp}
+          maxTemp={appState.forecast.maxTemp}
+          minTemp={appState.forecast.minTemp}
+          pressure={appState.forecast.pressure}
+          humidity={appState.forecast.humidity}
+          rainProbability={appState.forecast.rainProbability}
+        />
       </main>
     </React.Fragment>
   );
