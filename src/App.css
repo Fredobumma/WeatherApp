@@ -97,14 +97,26 @@ p {
 
 /* Illustrations */
 .illustrations {
+  display: flex;
+  justify-content: center;
+  margin: 6rem auto 0;
+}
+
+.no-search {
+  background-image: url("images/no-data.svg");
+  height: 17.8rem;
+  width: 22.7rem;
+}
+
+.sky {
   background-image: url("images/sky.svg");
   height: 26.2rem;
-  margin: 6rem auto 0;
   position: relative;
   width: 25.8rem;
 }
 
-.illustrations__cloud {
+.cloud {
+  animation: cloud 30s linear infinite;
   background-image: url("images/cloudy.svg");
   height: 11.6rem;
   position: absolute;
@@ -114,7 +126,8 @@ p {
   z-index: 2;
 }
 
-.illustrations__cloud_2 {
+.cloud-2 {
+  animation: cloud-2 30s linear infinite;
   background-image: url("images/cloudy-2.svg");
   bottom: 13.5rem;
   height: 12.9rem;
@@ -123,13 +136,164 @@ p {
   width: 16.2rem;
 }
 
-.illustrations__sun {
+.cloudy-sun {
+  animation: sun 20s ease-in infinite;
   background-image: url("images/cloudySun.svg");
   height: 14.4rem;
   left: 5.5rem;
   position: absolute;
   top: 5rem;
   width: 14.4rem;
+}
+
+.sunny {
+  animation: sun 20s ease-in infinite;
+  background-image: url("images/sunny.svg");
+  height: 12.9rem;
+  left: 14rem;
+  position: absolute;
+  top: 2rem;
+  width: 12.4rem;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes cloud-2 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes sun {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+.rainy-cloud {
+  background-image: url("images/rainyCloud.svg");
+  height: 19.4rem;
+  position: relative;
+  width: 25.5rem;
+}
+
+.rain-drop-1,
+.rain-drop-2,
+.rain-drop-3 {
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  z-index: -5;
+}
+
+.rain-drop-1 {
+  animation: drop-1 3s linear infinite;
+  background-image: url("images/rainDrop1.svg");
+  bottom: -2.5rem;
+  height: 2.4rem;
+  width: 1.9rem;
+}
+
+.rain-drop-2 {
+  animation: drop-2 2s linear infinite;
+  background-image: url("images/rainDrop2.svg");
+  bottom: 0;
+  height: 1.2rem;
+  right: 2rem;
+  width: 1.1rem;
+}
+
+.rain-drop-3 {
+  animation: drop-3 2s linear infinite;
+  background-image: url("images/rainDrop3.svg");
+  bottom: -0.5rem;
+  height: 0.9rem;
+  left: 2rem;
+  width: 0.9rem;
+}
+
+@keyframes drop-1 {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+    transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes drop-2 {
+  0% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(35px);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes drop-3 {
+  0% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(35px);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.snow,
+.default-cloud {
+  height: 25.4rem;
+  width: 25.4rem;
+}
+
+.snow {
+  background-image: url("images/snow.svg");
+}
+
+.default-cloud {
+  background-image: url("images/default-cloud.svg");
 }
 
 /* Details */
