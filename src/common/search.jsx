@@ -5,7 +5,8 @@ const Search = ({
   searchInput,
   onClickToSearch,
   onCloseSearch,
-  onChange,
+  onSearch,
+  ...rest
 }) => {
   return (
     <React.Fragment>
@@ -20,9 +21,9 @@ const Search = ({
               placeholder="Search City Name"
               autoComplete="country-name"
               value={searchQuery}
-              onChange={onChange}
+              {...rest}
             />
-            <span className="icon enter-search"></span>
+            <span className="icon enter-search" onClick={onSearch}></span>
           </div>
         </div>
       )}
