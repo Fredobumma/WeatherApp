@@ -14,6 +14,7 @@ import {
 } from "./utilities/weatherCalculations";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import NoSearch from "./common/noSearch";
 
 function App() {
   const [appState, setAppState] = useState({
@@ -85,6 +86,7 @@ function App() {
         <ToastContainer />
         <NavBar
           logo={logo}
+          city={appState.forecast.city}
           searchQuery={appState.searchQuery}
           searchInput={appState.toggleSearchInput}
           onClickToSearch={handleSearchInput}
@@ -93,19 +95,23 @@ function App() {
           onSearch={handleSearch}
           onKeyDown={handleKeyDown}
         />
-        <Heading
-          city={appState.forecast.city}
-          weather={appState.forecast.weather}
-        />
-        <Illustrations />
-        <ForecastDetails
-          averageTemp={appState.forecast.averageTemp}
-          maxTemp={appState.forecast.maxTemp}
-          minTemp={appState.forecast.minTemp}
-          pressure={appState.forecast.pressure}
-          humidity={appState.forecast.humidity}
-          rainProbability={appState.forecast.rainProbability}
-        />
+        {(appState.forecast.city && (
+          <section>
+            <Heading
+              city={appState.forecast.city}
+              weather={appState.forecast.weather}
+            />
+            <Illustrations weather={appState.forecast.weather} />
+            <ForecastDetails
+              averageTemp={appState.forecast.averageTemp}
+              maxTemp={appState.forecast.maxTemp}
+              minTemp={appState.forecast.minTemp}
+              pressure={appState.forecast.pressure}
+              humidity={appState.forecast.humidity}
+              rainProbability={appState.forecast.rainProbability}
+            />
+          </section>
+        )) || <NoSearch />}
       </main>
     </React.Fragment>
   );

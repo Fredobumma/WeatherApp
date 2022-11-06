@@ -1,10 +1,4 @@
-const reports = [
-  { title: "Sunny", min: 0, max: 30 },
-  { title: "Cloudy", min: 30, max: 60 },
-  { title: "Rainy", min: 60, max: 70 },
-  { title: "Misty" },
-  { title: "Snowy" },
-];
+import { reports } from "./weatherReport";
 
 function findReport(value) {
   return (
@@ -17,7 +11,7 @@ function findReport(value) {
 export function getWeatherTitle(value) {
   if (value === "Clear") return reports[0].title;
 
-  return findReport(value).title || `${value}y`;
+  return findReport(value) ? findReport(value).title : `${value}y`;
 }
 
 export function getCelsius(value) {

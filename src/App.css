@@ -38,6 +38,10 @@ p {
 }
 
 .icon-search {
+  background-image: url("images/magnifying-glass-plus-solid.svg");
+}
+
+.icon-new-search {
   background-image: url("images/magnifying-glass-solid.svg");
 }
 
@@ -105,6 +109,7 @@ p {
 .no-search {
   background-image: url("images/no-data.svg");
   height: 17.8rem;
+  margin: 20vh auto 0;
   width: 22.7rem;
 }
 
@@ -290,6 +295,7 @@ p {
 
 .snow {
   background-image: url("images/snow.svg");
+  background-repeat: no-repeat;
 }
 
 .default-cloud {

@@ -1,6 +1,7 @@
 import React from "react";
 
-const Search = ({
+const SearchInput = ({
+  city,
   searchQuery,
   searchInput,
   onClickToSearch,
@@ -10,7 +11,10 @@ const Search = ({
 }) => {
   return (
     <React.Fragment>
-      <span className="icon icon-search" onClick={onClickToSearch}></span>
+      <span
+        className={`icon icon-search ${city && "icon-new-search"}`}
+        onClick={onClickToSearch}
+      ></span>
       {searchInput && (
         <div className="search--backdrop" onClick={onCloseSearch}>
           <div className="search--box" onClick={(e) => e.stopPropagation()}>
@@ -23,7 +27,6 @@ const Search = ({
               value={searchQuery}
               {...rest}
             />
-            {console.log(...rest)}
             <span className="icon enter-search" onClick={onSearch}></span>
           </div>
         </div>
@@ -32,4 +35,4 @@ const Search = ({
   );
 };
 
-export default Search;
+export default SearchInput;

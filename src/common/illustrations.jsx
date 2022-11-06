@@ -1,25 +1,9 @@
 import React from "react";
+import { getIllustrations } from "../utilities/weatherReport";
 
-const Illustrations = () => {
+const Illustrations = ({ weather }) => {
   return (
-    <section className="illustrations">
-      {/* <div className="sky">
-        <div className="cloud"></div>
-        <div className="cloudy-sun"></div>
-        <div className="cloud-2"></div>
-      </div>
-      <div className="sky">
-        <div className="sunny"></div>
-      </div> 
-        <div className="rainy-cloud">
-        <div className="rain-drop-1"></div>
-        <div className="rain-drop-2"></div>
-        <div className="rain-drop-3"></div>
-      </div>
-      <div className="snow"></div>
-      <div className="default-cloud"></div>
-      */}
-    </section>
+    <section className="illustrations">{getIllustrations(weather)}</section>
   );
 };
 
