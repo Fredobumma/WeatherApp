@@ -6,11 +6,18 @@ import Heading from "./common/heading";
 import Illustrations from "./common/illustrations";
 import ForecastDetails from "./common/forecastDetails";
 import { getWeatherForecast } from "./services/weatherForecastService";
+import {
+  getCelsius,
+  getPressure,
+  getRainProbability,
+  getWeatherTitle,
+} from "./utilities/weatherCalculations";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [appState, setAppState] = useState({
+    forecast: {},
     searchQuery: "",
     toggleSearchInput: false,
   });
@@ -33,9 +40,24 @@ function App() {
     setAppState(stateObj);
   };
 
+  const mapToViewModel = ({ name, weather, main }) => {
+    const apiWeather = weather[0].main;
+    return {
+      city: name,
+      humidity: main.humidity,
+      weather: getWeatherTitle(apiWeather),
+      averageTemp: getCelsius(main.temp),
+      maxTemp: getCelsius(main.temp_max),
+      minTemp: getCelsius(main.temp_min),
+      pressure: getPressure(main.pressure),
+      rainProbability: getRainProbability(apiWeather),
+    };
+  };
+
   const doSubmit = async () => {
     try {
-      await getWeatherForecast(stateObj.searchQuery);
+      const { data } = await getWeatherForecast(stateObj.searchQuery);
+      stateObj.forecast = mapToViewModel(data);
       stateObj.toggleSearchInput = false;
     } catch (error) {
       if (error.response && error.response.status === 404)
