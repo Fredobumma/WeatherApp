@@ -44,7 +44,6 @@ function App() {
         <Illustrations />
         <ForecastDetails />
       </main>
-      {console.log(appState.searchQuery)}
     </React.Fragment>
   );
 }
