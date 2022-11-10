@@ -1,9 +1,11 @@
 import React from "react";
-import { getIllustrations } from "../utilities/weatherReport";
+import { getIllustrations } from "../utilities/weatherCalculations";
 
-const Illustrations = ({ weather }) => {
+const Illustrations = ({ cityTime, weather }) => {
   return (
-    <section className="illustrations">{getIllustrations(weather)}</section>
+    <section className="illustrations">
+      {getIllustrations(cityTime, weather)}
+    </section>
   );
 };
 

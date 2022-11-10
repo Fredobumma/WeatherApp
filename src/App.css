@@ -46,15 +46,15 @@ p {
 }
 
 .search--backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: 5;
 }
 
@@ -80,8 +80,8 @@ p {
   border: 0;
   border-radius: 2rem;
   color: #000749;
-  font-size: 5vw;
-  padding: 0.5rem 0 0.5rem 5vw;
+  font-size: 2rem;
+  padding: 0.5rem 1rem 0.5rem 5vw;
   outline: none;
   width: 80%;
 }
@@ -142,7 +142,7 @@ p {
 }
 
 .cloudy-sun {
-  animation: sun 20s ease-in infinite;
+  animation: sun-moon 20s ease-in infinite;
   background-image: url("images/cloudySun.svg");
   height: 14.4rem;
   left: 5.5rem;
@@ -151,14 +151,29 @@ p {
   width: 14.4rem;
 }
 
-.sunny {
-  animation: sun 20s ease-in infinite;
-  background-image: url("images/sunny.svg");
-  height: 12.9rem;
+.sunny,
+.moon {
+  animation: sun-moon 20s ease-in infinite;
   left: 14rem;
   position: absolute;
   top: 2rem;
+}
+
+.sunny {
+  background-image: url("images/sunny.svg");
+  height: 12.9rem;
   width: 12.4rem;
+}
+
+.cloudy-moon,
+.moon {
+  background-image: url("images/moon.svg");
+  height: 12.6rem;
+  width: 12.6rem;
+}
+
+.cloudy-moon {
+  animation: sun-moon 20s ease-in infinite;
 }
 
 @keyframes cloud {
@@ -185,7 +200,7 @@ p {
   }
 }
 
-@keyframes sun {
+@keyframes sun-moon {
   0% {
     transform: scale(0.7);
   }
@@ -358,6 +373,5 @@ p {
 }
 
 .pressure + .extra-info__text {
-  margin-top: 1.7rem;
+  margin-top: 1.6rem;
 }
-/* Animation */

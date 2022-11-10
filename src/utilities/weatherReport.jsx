@@ -1,11 +1,11 @@
 export const reports = [
   {
-    title: "Sunny",
-    min: 0,
+    title: "Clear",
+    min: 10,
     max: 30,
-    content: (
+    content: (cityTime) => (
       <div className="sky">
-        <div className="sunny"></div>
+        <div className={getDay_Night(cityTime, "sunny", "moon")}></div>
       </div>
     ),
   },
@@ -13,10 +13,12 @@ export const reports = [
     title: "Cloudy",
     min: 30,
     max: 60,
-    content: (
+    content: (cityTime) => (
       <div className="sky">
         <div className="cloud"></div>
-        <div className="cloudy-sun"></div>
+        <div
+          className={getDay_Night(cityTime, "cloudy-sun", "cloudy-moon")}
+        ></div>
         <div className="cloud-2"></div>
       </div>
     ),
@@ -25,7 +27,7 @@ export const reports = [
     title: "Rainy",
     min: 60,
     max: 70,
-    content: (
+    content: () => (
       <div className="rainy-cloud">
         <div className="rain-drop-1"></div>
         <div className="rain-drop-2"></div>
@@ -33,12 +35,12 @@ export const reports = [
       </div>
     ),
   },
-  { title: "Snowy", content: <div className="snow"></div> },
+  { title: "Snowy", content: () => <div className="snow"></div> },
   { title: "Misty" },
+  { title: "Drizzling" },
 ];
 
-export function getIllustrations(value) {
-  const reportObj = reports.find((report) => report.title === value);
-  if (reportObj) return reportObj.content;
-  return <div className="default-cloud"></div>;
+export function getDay_Night(time, dawn, dusk) {
+  const hour = time.substring(0, 2);
+  return hour > 7 && hour < 18 ? dawn : dusk;
 }

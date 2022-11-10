@@ -1,17 +1,13 @@
 import { reports } from "./weatherReport";
 
 function findReport(value) {
-  return (
-    reports.find(
-      (report) => report.title.substring(0, 4) === value.substring(0, 4)
-    ) || {}
+  return reports.find(
+    (report) => report.title.substring(0, 4) === value.substring(0, 4)
   );
 }
 
 export function getWeatherTitle(value) {
-  if (value === "Clear") return reports[0].title;
-
-  return findReport(value) ? findReport(value).title : `${value}y`;
+  return findReport(value) ? findReport(value).title : value;
 }
 
 export function getCelsius(value) {
@@ -24,8 +20,27 @@ export function getPressure(value) {
 }
 
 export function getRainProbability(value) {
-  const weathertitle = findReport(value);
-  const { min, max } = weathertitle;
+  const weatherTitle = findReport(value);
+  if (!weatherTitle || !weatherTitle.max) return "--";
 
-  return Math.floor(Math.random() * (max - min) + min) || "--";
+  const { min, max } = weatherTitle;
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+export function getIllustrations(cityTime, value) {
+  const reportObj = reports.find((report) => report.title === value) || {};
+  return (
+    (reportObj.content && reportObj.content(cityTime)) || (
+      <div className="default-cloud"></div>
+    )
+  );
+}
+
+export function getCityTime(value) {
+  const localTime = new Date().getTime();
+  const localOffset = new Date().getTimezoneOffset() * 60000;
+  const currentUtcTime = localOffset + localTime;
+  const cityOffset = currentUtcTime + 1000 * value;
+  const cityTime = new Date(cityOffset).toTimeString().split(" ")[0];
+  return cityTime;
 }
