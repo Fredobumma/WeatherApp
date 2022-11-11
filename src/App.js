@@ -68,7 +68,7 @@ function App() {
       stateObj.toggleSearchInput = false;
     } catch (error) {
       if (error.response && error.response.status === 404)
-        toast.error(notfoundError);
+        toast.error(notfoundError, { toastId: 1 });
     }
     stateObj.searchQuery = "";
     setLoading(false);
@@ -76,13 +76,13 @@ function App() {
   };
 
   const handleSearch = () => {
-    if (!stateObj.searchQuery) return toast(emptyInputError);
+    if (!stateObj.searchQuery) return toast(emptyInputError, { toastId: 2 });
     doSubmit();
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !stateObj.searchQuery)
-      return toast(emptyInputError);
+      return toast(emptyInputError, { toastId: 2 });
 
     if (e.key === "Enter") doSubmit();
   };
@@ -124,7 +124,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <main>
+      <main className={toggleSearchInput && "prevent-scroll"}>
         <ToastContainer />
         {loading && <Loader />}
         <NavBar
