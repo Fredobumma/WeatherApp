@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import logo from "./images/logo.svg";
+import Loader from "./common/loader";
 import NavBar from "./common/navbar";
+import NoSearch from "./common/noSearch";
 import Heading from "./common/heading";
 import Illustrations from "./common/illustrations";
 import ForecastDetails from "./common/forecastDetails";
@@ -15,7 +16,6 @@ import {
 } from "./utilities/weatherCalculations";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import NoSearch from "./common/noSearch";
 
 function App() {
   const [appState, setAppState] = useState({
@@ -23,6 +23,7 @@ function App() {
     searchQuery: "",
     toggleSearchInput: false,
   });
+  const [loading, setLoading] = useState(true);
   const stateObj = { ...appState };
   const notfoundError = "City not found";
   const emptyInputError = "Please enter a valid city name";
@@ -59,6 +60,7 @@ function App() {
 
   const doSubmit = async () => {
     if (!stateObj.searchQuery) stateObj.searchQuery = appState.forecast.city;
+    setLoading(true);
 
     try {
       const { data } = await getWeatherForecast(stateObj.searchQuery);
@@ -69,6 +71,7 @@ function App() {
         toast.error(notfoundError);
     }
     stateObj.searchQuery = "";
+    setLoading(false);
     setAppState(stateObj);
   };
 
@@ -95,6 +98,14 @@ function App() {
     };
   });
 
+  useEffect(() => {
+    const loaderTimeout = setTimeout(() => setLoading(false), 2000);
+    return () => {
+      // clean up
+      clearTimeout(loaderTimeout);
+    };
+  }, []);
+
   const {
     forecast: {
       city,
@@ -115,8 +126,8 @@ function App() {
     <React.Fragment>
       <main>
         <ToastContainer />
+        {loading && <Loader />}
         <NavBar
-          logo={logo}
           city={city}
           searchQuery={searchQuery}
           searchInput={toggleSearchInput}

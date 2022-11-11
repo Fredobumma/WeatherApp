@@ -1,8 +1,9 @@
 import React from "react";
 import AppLogo from "./appLogo";
+import logo from "../images/logo.svg";
 import SearchInput from "./searchInput";
 
-const NavBar = ({ logo, ...rest }) => {
+const NavBar = ({ ...rest }) => {
   return (
     <nav className="navbar">
       <AppLogo logo={logo} />

@@ -45,7 +45,8 @@ p {
   background-image: url("images/magnifying-glass-solid.svg");
 }
 
-.search--backdrop {
+.search--backdrop,
+.loader-wrapper {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
   bottom: 0;
@@ -374,4 +375,42 @@ p {
 
 .pressure + .extra-info__text {
   margin-top: 1.6rem;
+}
+
+/* Loading Animation */
+.loader-wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.loader {
+  animation: rotation 1s linear infinite;
+  background-color: #000749;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  height: 48px;
+  position: relative;
+  width: 48px;
+}
+
+.loader::after {
+  background-color: #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: "";
+  height: 12px;
+  left: 4px;
+  margin: 5px;
+  position: absolute;
+  top: 4px;
+  width: 12px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
