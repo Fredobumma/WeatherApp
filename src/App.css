@@ -2,9 +2,11 @@
 
 /* Basic Styles */
 main {
+  background-color: rgb(243, 243, 243);
   color: #000749;
   font-size: calc(10px + 2vmin);
   font-weight: 500;
+  height: 100vh;
   text-align: center;
 }
 
@@ -24,12 +26,13 @@ p {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 2rem 2.5rem 7rem 1rem;
+  padding: 1.5rem 2rem 7rem 1rem;
 }
 
 .app-logo {
   max-width: 30rem;
   width: 50vmin;
+  max-width: 20rem;
 }
 
 .icon {
@@ -53,6 +56,8 @@ p {
   display: flex;
   justify-content: center;
   left: 0;
+  margin: 0 auto;
+  max-width: 600px;
   overflow-y: hidden;
   position: fixed;
   right: 0;
@@ -62,6 +67,8 @@ p {
 
 .prevent-scroll {
   left: 0;
+  margin: 0 auto;
+  max-width: 600px;
   position: fixed;
   right: 0;
 }
@@ -74,9 +81,11 @@ p {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   display: flex;
+  justify-content: space-around;
   height: max-content;
   left: 0;
   margin: auto;
+  max-width: 478px;
   padding: 0.5rem 0 0.5rem 0;
   position: absolute;
   right: 0;
@@ -89,7 +98,7 @@ p {
   border-radius: 2rem;
   color: #000749;
   font-size: 2rem;
-  padding: 0.5rem 1rem 0.5rem 5vw;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
   outline: none;
   width: 80%;
 }
@@ -103,7 +112,7 @@ p {
   background-image: url("images/arrow-right-solid.svg");
   background-repeat: no-repeat;
   height: 3rem;
-  padding-right: 4vw;
+  padding-left: 2rem;
   width: 2.7rem;
 }
 
@@ -352,7 +361,8 @@ p {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: repeat(3, 1fr);
-  margin: 6.5rem auto 5rem;
+  margin: 6.5rem auto 0;
+  padding-bottom: 4rem;
   width: 85%;
 }
 

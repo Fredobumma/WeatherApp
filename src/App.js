@@ -124,7 +124,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <main className={toggleSearchInput && "prevent-scroll"}>
+      <main className={`${toggleSearchInput && "prevent-scroll"}`}>
         <ToastContainer />
         {loading && <Loader />}
         <NavBar

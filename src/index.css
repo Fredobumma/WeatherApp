@@ -4,10 +4,11 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: "Franklin Gothic Medium", arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  max-width: 600px;
   overflow-x: hidden;
 }
 
