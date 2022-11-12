@@ -12,7 +12,9 @@ const SearchInput = ({
   return (
     <React.Fragment>
       <span
-        className={`icon icon-search ${city && "icon-new-search"}`}
+        className={`icon icon-search bg-magnifying_glass_solid ${
+          !city && "icon-new-search bg-magnifying_glass_plus_solid"
+        }`}
         onClick={onClickToSearch}
       ></span>
       {searchInput && (
@@ -27,7 +29,10 @@ const SearchInput = ({
               value={searchQuery}
               {...rest}
             />
-            <span className="icon enter-search" onClick={onSearch}></span>
+            <span
+              className="icon enter-search bg-arrow_right_solid"
+              onClick={onSearch}
+            ></span>
           </div>
         </div>
       )}

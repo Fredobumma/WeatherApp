@@ -31,7 +31,7 @@ export function getIllustrations(cityTime, value) {
   const reportObj = reports.find((report) => report.title === value) || {};
   return (
     (reportObj.content && reportObj.content(cityTime)) || (
-      <div className="default-cloud"></div>
+      <div className="bg-default_cloud"></div>
     )
   );
 }

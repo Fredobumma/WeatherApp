@@ -19,17 +19,17 @@ const ForecastDetails = ({
       </div>
       <div className="extra-info--details">
         <div>
-          <div className="icon extra-info--icon pressure"></div>
+          <div className="icon extra-info--icon bg-pressure"></div>
           <div className="extra-info__text">
             {pressure}kN/m<sup>2</sup>
           </div>
         </div>
         <div>
-          <div className="icon extra-info--icon humidity"></div>
+          <div className="icon extra-info--icon bg-humidity"></div>
           <div className="extra-info__text">{humidity}%</div>
         </div>
         <div>
-          <div className="icon extra-info--icon rain"></div>
+          <div className="icon extra-info--icon bg-rain"></div>
           <div className="extra-info__text">{rainProbability}%</div>
         </div>
       </div>

@@ -2,11 +2,9 @@
 
 /* Basic Styles */
 main {
-  background-color: rgb(243, 243, 243);
   color: #000749;
   font-size: calc(10px + 2vmin);
   font-weight: 500;
-  height: 100vh;
   text-align: center;
 }
 
@@ -30,9 +28,8 @@ p {
 }
 
 .app-logo {
-  max-width: 30rem;
-  width: 50vmin;
   max-width: 20rem;
+  width: 50vmin;
 }
 
 .icon {
@@ -40,12 +37,12 @@ p {
   width: 2.4rem;
 }
 
-.icon-search {
-  background-image: url("images/magnifying-glass-plus-solid.svg");
+.icon-search.bg-magnifying_glass_solid {
+  background: url("images/css_sprites.png") -1358px -451px;
 }
 
-.icon-new-search {
-  background-image: url("images/magnifying-glass-solid.svg");
+.icon-new-search.bg-magnifying_glass_plus_solid {
+  background: url("images/css_sprites.png") -1402px -451px;
 }
 
 .search--backdrop,
@@ -108,9 +105,8 @@ p {
   opacity: 30%;
 }
 
-.enter-search {
-  background-image: url("images/arrow-right-solid.svg");
-  background-repeat: no-repeat;
+.enter-search.bg-arrow_right_solid {
+  background: url("images/css_sprites.png") -387px -584px;
   height: 3rem;
   padding-left: 2rem;
   width: 2.7rem;
@@ -123,23 +119,23 @@ p {
   margin: 6rem auto 0;
 }
 
-.no-search {
-  background-image: url("images/no-data.svg");
+.no-search.bg-no_data {
+  background: url("images/css_sprites.png") -1111px -302px;
   height: 17.8rem;
   margin: 20vh auto 0;
   width: 22.7rem;
 }
 
-.sky {
-  background-image: url("images/sky.svg");
+.bg-sky {
+  background: url("images/css_sprites.png") -10px -302px;
   height: 26.2rem;
   position: relative;
   width: 25.8rem;
 }
 
-.cloud {
+.bg-cloudy {
   animation: cloud 30s linear infinite;
-  background-image: url("images/cloudy.svg");
+  background: url("images/css_sprites.png") -174px -584px;
   height: 11.6rem;
   position: absolute;
   right: 12.2rem;
@@ -148,9 +144,9 @@ p {
   z-index: 2;
 }
 
-.cloud-2 {
+.bg-cloudy_2 {
   animation: cloud-2 30s linear infinite;
-  background-image: url("images/cloudy-2.svg");
+  background: url("images/css_sprites.png") -1358px -302px;
   bottom: 13.5rem;
   height: 12.9rem;
   left: 10.8rem;
@@ -158,9 +154,9 @@ p {
   width: 16.2rem;
 }
 
-.cloudy-sun {
+.bg-cloudySun {
   animation: sun-moon 20s ease-in infinite;
-  background-image: url("images/cloudySun.svg");
+  background: url("images/css_sprites.png") -10px -584px;
   height: 14.4rem;
   left: 5.5rem;
   position: absolute;
@@ -168,28 +164,28 @@ p {
   width: 14.4rem;
 }
 
-.sunny,
-.moon {
+.bg-sunny,
+.bg-moon {
   animation: sun-moon 20s ease-in infinite;
   left: 14rem;
   position: absolute;
   top: 2rem;
 }
 
-.sunny {
-  background-image: url("images/sunny.svg");
+.bg-sunny {
+  background: url("images/css_sprites.png") -10px -748px;
   height: 12.9rem;
   width: 12.4rem;
 }
 
-.cloudy-moon,
-.moon {
-  background-image: url("images/moon.svg");
+.bg-cloudyMoon,
+.bg-moon {
+  background: url("images/css_sprites.png") -154px -748px;
   height: 12.6rem;
   width: 12.6rem;
 }
 
-.cloudy-moon {
+.bg-cloudyMoon {
   animation: sun-moon 20s ease-in infinite;
 }
 
@@ -229,43 +225,43 @@ p {
   }
 }
 
-.rainy-cloud {
-  background-image: url("images/rainyCloud.svg");
+.bg-rainyCloud {
+  background: url("images/css_sprites.png") -836px -302px;
   height: 19.4rem;
   position: relative;
   width: 25.5rem;
 }
 
-.rain-drop-1,
-.rain-drop-2,
-.rain-drop-3 {
+.bg-rainDrop1,
+.bg-rainDrop2,
+.bg-rainDrop3 {
   left: 0;
   margin: auto;
   position: absolute;
   right: 0;
-  z-index: -5;
+  z-index: 0;
 }
 
-.rain-drop-1 {
-  animation: drop-1 3s linear infinite;
-  background-image: url("images/rainDrop1.svg");
-  bottom: -2.5rem;
-  height: 2.4rem;
+.bg-rainDrop1 {
+  animation: drop-1 2.5s linear infinite;
+  background: url("images/css_sprites.png") -434px -584px;
+  top: 16rem;
+  height: 24rem;
   width: 1.9rem;
 }
 
-.rain-drop-2 {
+.bg-rainDrop2 {
   animation: drop-2 2s linear infinite;
-  background-image: url("images/rainDrop2.svg");
+  background: url("images/css_sprites.png") -1540px -302px;
   bottom: 0;
   height: 1.2rem;
   right: 2rem;
   width: 1.1rem;
 }
 
-.rain-drop-3 {
+.bg-rainDrop3 {
   animation: drop-3 2s linear infinite;
-  background-image: url("images/rainDrop3.svg");
+  background: url("images/css_sprites.png") -1540px -334px;
   bottom: -0.5rem;
   height: 0.9rem;
   left: 2rem;
@@ -274,22 +270,19 @@ p {
 
 @keyframes drop-1 {
   0% {
-    transform: translateY(-10px);
-    opacity: 1;
-    transform: scale(0);
+    opacity: 0;
   }
-  80% {
-    opacity: 1;
-    transform: scale(0);
-  }
-  90% {
-    opacity: 0.5;
+  30% {
+    transform: translateY(20px);
     transform: scale(1);
   }
+  50% {
+    opacity: 0.5;
+  }
   100% {
-    transform: translateY(0);
+    transform: translateY(30px);
     opacity: 0;
-    transform: scale(1.5);
+    transform: scale(0);
   }
 }
 
@@ -319,19 +312,18 @@ p {
   }
 }
 
-.snow,
-.default-cloud {
+.bg-snow,
+.bg-default_cloud {
   height: 25.4rem;
   width: 25.4rem;
 }
 
-.snow {
-  background-image: url("images/snow.svg");
-  background-repeat: no-repeat;
+.bg-snow {
+  background: url("images/css_sprites.png") -562px -302px;
 }
 
-.default-cloud {
-  background-image: url("images/default-cloud.svg");
+.bg-default_cloud {
+  background: url("images/css_sprites.png") -288px -302px;
 }
 
 /* Details */
@@ -367,22 +359,23 @@ p {
 }
 
 .extra-info--icon {
-  background-repeat: no-repeat;
   margin: auto;
 }
 
-.pressure {
-  background-image: url("images/pressure.svg");
+.bg-pressure {
+  background: url("images/css_sprites.png") -1490px -451px;
 }
 
-.humidity {
-  background-image: url("images/humidity.svg");
+.bg-humidity {
+  background: url("images/css_sprites.png") -342px -584px;
   height: 3.4rem;
   margin-top: -1rem;
 }
 
-.rain {
-  background-image: url("images/rain.svg");
+.bg-rain {
+  background: url("images/css_sprites.png") -1446px -451px;
+  height: 2.2rem;
+  width: 2.4rem;
 }
 
 .extra-info__text {
@@ -390,7 +383,7 @@ p {
   margin-top: 2rem;
 }
 
-.pressure + .extra-info__text {
+.bg-pressure + .extra-info__text {
   margin-top: 1.6rem;
 }
 

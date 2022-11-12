@@ -4,8 +4,8 @@ export const reports = [
     min: 10,
     max: 30,
     content: (cityTime) => (
-      <div className="sky">
-        <div className={getDay_Night(cityTime, "sunny", "moon")}></div>
+      <div className="bg-sky">
+        <div className={getDay_Night(cityTime, "bg-sunny", "bg-moon")}></div>
       </div>
     ),
   },
@@ -14,12 +14,12 @@ export const reports = [
     min: 30,
     max: 60,
     content: (cityTime) => (
-      <div className="sky">
-        <div className="cloud"></div>
+      <div className="bg-sky">
+        <div className="bg-cloudy"></div>
         <div
-          className={getDay_Night(cityTime, "cloudy-sun", "cloudy-moon")}
+          className={getDay_Night(cityTime, "bg-cloudySun", "bg-cloudyMoon")}
         ></div>
-        <div className="cloud-2"></div>
+        <div className="bg-cloudy_2"></div>
       </div>
     ),
   },
@@ -28,14 +28,14 @@ export const reports = [
     min: 60,
     max: 70,
     content: () => (
-      <div className="rainy-cloud">
-        <div className="rain-drop-1"></div>
-        <div className="rain-drop-2"></div>
-        <div className="rain-drop-3"></div>
+      <div className="bg-rainyCloud">
+        <div className="bg-rainDrop1"></div>
+        <div className="bg-rainDrop2"></div>
+        <div className="bg-rainDrop3"></div>
       </div>
     ),
   },
-  { title: "Snowy", content: () => <div className="snow"></div> },
+  { title: "Snowy", content: () => <div className="bg-snow"></div> },
   { title: "Misty" },
   { title: "Drizzling" },
 ];
