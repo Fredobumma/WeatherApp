@@ -42,5 +42,5 @@ export const reports = [
 
 export function getDay_Night(time, dawn, dusk) {
   const hour = time.substring(0, 2);
-  return hour > 7 && hour < 18 ? dawn : dusk;
+  return hour > 6 && hour < 18 ? dawn : dusk;
 }
