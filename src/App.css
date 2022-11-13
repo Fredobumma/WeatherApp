@@ -1,8 +1,15 @@
 @import url(https://allfont.net/allfont.css?fonts=franklin-gothic-medium);
 
 /* Basic Styles */
+:root {
+  --color-primary: #000749;
+  --position-fixed: fixed;
+  --position-absolute: absolute;
+  --position-relative: relative;
+}
+
 main {
-  color: #000749;
+  color: var(--color-primary);
   font-size: calc(10px + 2vmin);
   font-weight: 500;
   text-align: center;
@@ -11,7 +18,11 @@ main {
 h1 {
   font-size: 3.2rem;
   font-weight: 500;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 p {
@@ -56,7 +67,7 @@ p {
   margin: 0 auto;
   max-width: 600px;
   overflow-y: hidden;
-  position: fixed;
+  position: var(--position-fixed);
   right: 0;
   top: 0;
   z-index: 5;
@@ -66,14 +77,14 @@ p {
   left: 0;
   margin: 0 auto;
   max-width: 600px;
-  position: fixed;
+  position: var(--position-fixed);
   right: 0;
 }
 
 .search--box {
   align-items: center;
   background-color: #fff;
-  border: 0 solid #000749;
+  border: 0 solid var(--color-primary);
   border-radius: 2rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -84,7 +95,7 @@ p {
   margin: auto;
   max-width: 478px;
   padding: 0.5rem 0 0.5rem 0;
-  position: absolute;
+  position: var(--position-absolute);
   right: 0;
   top: 8.5vh;
   width: 75vw;
@@ -93,7 +104,7 @@ p {
 .search--input {
   border: 0;
   border-radius: 2rem;
-  color: #000749;
+  color: var(--color-primary);
   font-size: 2rem;
   padding: 0.5rem 1rem 0.5rem 2.5rem;
   outline: none;
@@ -101,7 +112,7 @@ p {
 }
 
 .search--input::placeholder {
-  color: #000749;
+  color: var(--color-primary);
   opacity: 30%;
 }
 
@@ -117,6 +128,7 @@ p {
   display: flex;
   justify-content: center;
   margin: 6rem auto 0;
+  min-height: 26.5rem;
 }
 
 .no-search.bg-no_data {
@@ -129,7 +141,7 @@ p {
 .bg-sky {
   background: url("images/css_sprites.png") -10px -302px;
   height: 26.2rem;
-  position: relative;
+  position: var(--position-relative);
   width: 25.8rem;
 }
 
@@ -137,7 +149,7 @@ p {
   animation: cloud 30s linear infinite;
   background: url("images/css_sprites.png") -174px -584px;
   height: 11.6rem;
-  position: absolute;
+  position: var(--position-absolute);
   right: 12.2rem;
   top: 5rem;
   width: 14.8rem;
@@ -150,7 +162,7 @@ p {
   bottom: 13.5rem;
   height: 12.9rem;
   left: 10.8rem;
-  position: absolute;
+  position: var(--position-absolute);
   width: 16.2rem;
 }
 
@@ -159,7 +171,7 @@ p {
   background: url("images/css_sprites.png") -10px -584px;
   height: 14.4rem;
   left: 5.5rem;
-  position: absolute;
+  position: var(--position-absolute);
   top: 5rem;
   width: 14.4rem;
 }
@@ -168,7 +180,7 @@ p {
 .bg-moon {
   animation: sun-moon 20s ease-in infinite;
   left: 14rem;
-  position: absolute;
+  position: var(--position-absolute);
   top: 2rem;
 }
 
@@ -228,7 +240,8 @@ p {
 .bg-rainyCloud {
   background: url("images/css_sprites.png") -836px -302px;
   height: 19.4rem;
-  position: relative;
+  margin-top: 2rem;
+  position: var(--position-relative);
   width: 25.5rem;
 }
 
@@ -237,13 +250,13 @@ p {
 .bg-rainDrop3 {
   left: 0;
   margin: auto;
-  position: absolute;
+  position: var(--position-absolute);
   right: 0;
   z-index: 0;
 }
 
 .bg-rainDrop1 {
-  animation: drop-1 2.5s linear infinite;
+  animation: drop-1 3s linear infinite;
   background: url("images/css_sprites.png") -434px -584px;
   top: 16rem;
   height: 24rem;
@@ -394,12 +407,12 @@ p {
 
 .loader {
   animation: rotation 1s linear infinite;
-  background-color: #000749;
+  background-color: var(--color-primary);
   border-radius: 50%;
   box-sizing: border-box;
   display: block;
   height: 48px;
-  position: relative;
+  position: var(--position-relative);
   width: 48px;
 }
 
@@ -411,7 +424,7 @@ p {
   height: 12px;
   left: 4px;
   margin: 5px;
-  position: absolute;
+  position: var(--position-absolute);
   top: 4px;
   width: 12px;
 }
