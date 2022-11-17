@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { getIllustrations } from "../utilities/weatherCalculations";
 
 const Illustrations = ({ cityTime, weather }) => {
@@ -7,6 +8,11 @@ const Illustrations = ({ cityTime, weather }) => {
       {getIllustrations(cityTime, weather)}
     </section>
   );
+};
+
+Illustrations.propTypes = {
+  weather: PropTypes.string,
+  cityTime: PropTypes.string,
 };
 
 export default Illustrations;

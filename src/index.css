@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "franklin_gothic_mediumregular";
+  src: url("services/fontService/franklin-gothic-medium_cad69af7e1dd4b7b77c3a4a21120cd60-webfont.woff2")
+      format("woff2"),
+    url("services/fontService/franklin-gothic-medium_cad69af7e1dd4b7b77c3a4a21120cd60-webfont.woff")
+      format("woff");
+}
+
 html {
   font-size: 62.5%;
   height: 100%;
@@ -5,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Franklin Gothic Medium", arial;
+  font-family: "franklin_gothic_mediumregular", arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;

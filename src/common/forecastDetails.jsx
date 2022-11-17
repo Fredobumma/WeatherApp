@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ForecastDetails = ({
   averageTemp,
@@ -35,6 +36,15 @@ const ForecastDetails = ({
       </div>
     </section>
   );
+};
+
+ForecastDetails.propTypes = {
+  averageTemp: PropTypes.number,
+  maxTemp: PropTypes.number,
+  minTemp: PropTypes.number,
+  pressure: PropTypes.number,
+  humidity: PropTypes.number,
+  rainProbability: PropTypes.number,
 };
 
 export default ForecastDetails;

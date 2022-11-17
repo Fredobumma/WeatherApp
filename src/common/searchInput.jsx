@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const SearchInput = ({
   city,
@@ -38,6 +39,15 @@ const SearchInput = ({
       )}
     </React.Fragment>
   );
+};
+
+SearchInput.propTypes = {
+  city: PropTypes.string,
+  searchQuery: PropTypes.string,
+  searchInput: PropTypes.bool,
+  onClickToSearch: PropTypes.func,
+  onCloseSearch: PropTypes.func,
+  onSearch: PropTypes.func,
 };
 
 export default SearchInput;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { getDay_Night } from "../utilities/weatherReport";
 
 const Heading = ({ city, weather, cityTime }) => {
@@ -10,6 +11,12 @@ const Heading = ({ city, weather, cityTime }) => {
       <p>{weather}</p>
     </header>
   );
+};
+
+Heading.propTypes = {
+  city: PropTypes.string,
+  weather: PropTypes.string,
+  cityTime: PropTypes.string,
 };
 
 export default Heading;
